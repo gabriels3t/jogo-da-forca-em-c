@@ -1,7 +1,22 @@
 #include <stdio.h>
 #include <string.h>
 
+void abertura(){
+    printf("/****************/\n");
+    printf("/ Jogo de Forca */\n");
+    printf("/****************/\n\n");
+}
+
+void chuta(int chutes,int tentativas){
+     char chute;
+        scanf(" %c",&chute); // Colocar um espaço antes do %c para nao ocorer um buffer
+        chutes[tentativas] = chute;
+        tentativas++; 
+}
+
 int main(){
+
+    abertura();
     char palavraSecreta[20];
     sprintf(palavraSecreta,"melancia");
     char chutes[26];
@@ -30,11 +45,7 @@ int main(){
             }
         }
         printf("\n");
-         
-        char chute;
-        scanf(" %c",&chute); // Colocar um espaço antes do %c para nao ocorer um buffer
+        chuta();
        
-        chutes[tentativas] = chute;
-        tentativas++; 
     }while(!acertou && !inforcou);
 }
